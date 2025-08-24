@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geospatial Staffing Solutions | GIS • Remote Sensing • Survey</title>
+  <meta name="description" content="We connect GIS, remote sensing, and geospatial engineering talent with companies that need them—fast. Contract, contract-to-hire, and direct placement.">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #121a33;
+      --muted: #99a3c2;
+      --text: #e9eef9;
+      --accent: #5eead4;
+      --accent-2: #7aa2ff;
+      --ring: rgba(126, 153, 255, .5);
+    }
+    * { box-sizing: border-box }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; color: var(--text); background: radial-gradient(1200px 800px at 10% -10%, #1a2448 0%, transparent 60%), radial-gradient(1400px 900px at 110% 10%, #132041 0%, transparent 60%), var(--bg); }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px }
+    header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); background: rgba(11,16,32,.6); border-bottom: 1px solid rgba(255,255,255,.06)}
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0 }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: .3px }
+    .logo { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--accent-2), var(--accent)); display: grid; place-items: center; color: #0b1020; font-weight: 900 }
+    .nav-links { display: flex; gap: 18px; align-items: center }
+    .btn { display: inline-block; padding: 10px 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.14); background: #141c38; color: var(--text); box-shadow: 0 0 0 0 var(--ring); transition: box-shadow .2s, transform .04s}
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 0 0 4px var(--ring)}
+    .btn.primary { background: linear-gradient(135deg, var(--accent-2), var(--accent)); color: #071022; border: none; font-weight: 700 }
+
+    /* Hero */
+    .hero { padding: 64px 0 28px }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: center }
+    .hero h1 { font-size: clamp(32px, 4.6vw, 58px); line-height: 1.05; margin: 0 0 12px }
+    .hero p { color: var(--muted); font-size: clamp(16px, 2.2vw, 18px) }
+    .hero-card { background: linear-gradient(180deg, rgba(122,162,255,.08), rgba(94,234,212,.06)); border: 1px solid rgba(255,255,255,.1); padding: 22px; border-radius: 16px }
+    .bullets { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin: 18px 0 26px }
+    .chip { background: #0f1731; border: 1px solid rgba(255,255,255,.08); padding: 10px 12px; border-radius: 12px; display: flex; gap: 10px; align-items: center; color: #c8d2ef }
+
+    /* Sections */
+    section { padding: 44px 0 }
+    .section-title { font-size: clamp(22px,3vw,30px); margin: 0 0 14px }
+    .muted { color: var(--muted) }
+
+    .cards { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px }
+    .card { background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 18px }
+    .card h3 { margin: 6px 0 8px }
+
+    .roles { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px }
+    .role { background: #0f1731; border: 1px solid rgba(255,255,255,.08); padding: 10px 12px; border-radius: 12px; color: #cfe2ff }
+
+    .process { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px }
+    .step { border-left: 3px solid var(--accent); background: #0f1731; border-radius: 10px; padding: 12px; border: 1px solid rgba(255,255,255,.08) }
+
+    /* CTA strip */
+    .cta { background: linear-gradient(90deg, rgba(94,234,212,.12), rgba(122,162,255,.12)); border: 1px solid rgba(255,255,255,.09); padding: 18px; border-radius: 16px; display: flex; align-items: center; justify-content: space-between; gap: 18px }
+
+    /* Forms */
+    form { display: grid; gap: 12px }
+    input, textarea, select { width: 100%; padding: 12px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.16); background: #0f1731; color: var(--text) }
+    textarea { min-height: 120px }
+    label { font-size: 14px; color: var(--muted) }
+
+    footer { padding: 40px 0 60px; color: var(--muted) }
+
+    /* Responsive */
+    @media (max-width: 980px){ .hero-grid { grid-template-columns: 1fr } .cards { grid-template-columns: 1fr 1fr } .roles { grid-template-columns: 1fr 1fr } .process { grid-template-columns: 1fr 1fr } }
+    @media (max-width: 640px){ .nav-links { display:none } .cards { grid-template-columns: 1fr } .roles { grid-template-columns: 1fr } .process { grid-template-columns: 1fr } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo">GS</div>
+          <div>Geospatial Staffing Solutions</div>
+        </div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#roles">Roles</a>
+          <a href="#process">Process</a>
+          <a href="#contact" class="btn">Contact</a>
+          <a href="#hire" class="btn primary">Hire Talent</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>We place GIS & remote‑sensing talent—fast.</h1>
+          <p>Contract, contract‑to‑hire, and direct placement for GIS, remote sensing, surveying, and geospatial engineering teams. We speak your language: LiDAR, photogrammetry, ArcGIS Pro, Python, FME, Civil3D, and more.</p>
+          <div class="bullets">
+            <div class="chip">• 72‑hour shortlists</div>
+            <div class="chip">• Pre‑vetted portfolios</div>
+            <div class="chip">• US‑based & remote</div>
+            <div class="chip">• Flexible billing</div>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap">
+            <a href="#hire" class="btn primary">Request Candidates</a>
+            <a href="#candidates" class="btn">Submit Your Resume</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <strong>Hard‑to‑hire specialties we fill</strong>
+          <ul>
+            <li>LiDAR: LP360, TerraScan/Modeler, GeoCue; point‑cloud QA/QC, DEM/DTM</li>
+            <li>Photogrammetry: ERDAS, Metashape, orthos, AT, DSM/True Ortho</li>
+            <li>GIS: ArcGIS Pro/ArcMap, ArcPy, ModelBuilder, ArcGIS Online/Enterprise</li>
+            <li>Data pipelines: FME, Python, SQL, PostGIS, ETL, QA/QC</li>
+            <li>CAD/BIM: AutoCAD/Civil 3D, MicroStation; planimetric mapping</li>
+            <li>Field & survey: GNSS/RTK, total station, mobile mapping</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Staffing Services</h2>
+        <p class="muted">From one project hire to building whole geospatial teams.</p>
+        <div class="cards">
+          <div class="card">
+            <h3>Contract & Project‑based</h3>
+            <p>Scale up quickly for surges: imagery production runs, map updates, LiDAR classification sprints, data cleanup, or app rollouts.</p>
+          </div>
+          <div class="card">
+            <h3>Contract‑to‑Hire</h3>
+            <p>Try before you buy. Evaluate skills, speed, and culture fit on real work before extending a full‑time offer.</p>
+          </div>
+          <div class="card">
+            <h3>Direct Placement</h3>
+            <p>We source, screen, and deliver shortlists. You interview. We support offers, onboarding, and retention.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roles">
+      <div class="container">
+        <h2 class="section-title">Roles We Place</h2>
+        <div class="roles" aria-label="roles grid">
+          <div class="role">GIS Technician / Analyst</div>
+          <div class="role">Remote Sensing Analyst</div>
+          <div class="role">LiDAR Specialist (LP360/TerraSolid)</div>
+          <div class="role">Photogrammetrist</div>
+          <div class="role">Cartographer / Editor (QA/QC)</div>
+          <div class="role">FME / ETL Developer</div>
+          <div class="role">ArcGIS Pro / Enterprise Admin</div>
+          <div class="role">AutoCAD / Civil 3D Tech</div>
+          <div class="role">Survey CAD Tech / Field Crew</div>
+          <div class="role">Python / GIS Developer</div>
+          <div class="role">Geospatial PM / Lead</div>
+          <div class="role">Imagery Production (Orthos/DEM)</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <h2 class="section-title">How It Works</h2>
+        <div class="process">
+          <div class="step">
+            <strong>1) Scope</strong>
+            <p class="muted">15‑minute intake: stack, datasets, SLAs, timeline, budget, and deliverables.</p>
+          </div>
+          <div class="step">
+            <strong>2) Source</strong>
+            <p class="muted">Targeted outreach across geospatial networks, referrals, and portfolio‑first screening.</p>
+          </div>
+          <div class="step">
+            <strong>3) Validate</strong>
+            <p class="muted">Skills‑based tasks and artifact reviews (MXDs/APRX, FME workbenches, scripts, sample maps).</p>
+          </div>
+          <div class="step">
+            <strong>4) Deliver</strong>
+            <p class="muted">Shortlist in 72 hours. You interview. We handle logistics, onboarding, and check‑ins.</p>
+          </div>
+        </div>
+
+        <div class="cta" id="hire" style="margin-top:18px">
+          <div>
+            <strong>Need candidates?</strong>
+            <p class="muted" style="margin:6px 0 0">Tell us your tech stack and start date—we'll send a shortlist fast.</p>
+          </div>
+          <a href="#contact" class="btn primary">Request Candidates</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="candidates">
+      <div class="container">
+        <h2 class="section-title">For Candidates</h2>
+        <p class="muted">We match you with roles that fit your stack and goals. US‑based remote and on‑site opportunities.</p>
+        <div class="cards">
+          <div class="card">
+            <h3>What we look for</h3>
+            <ul>
+              <li>Hands‑on artifacts: APRX/MXD, maps, scripts, QA/QC notes</li>
+              <li>Clear project outcomes and measurable impact</li>
+              <li>Communication and documentation habits</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Popular stacks</h3>
+            <ul>
+              <li>ArcGIS Pro, ArcGIS Online/Enterprise, ArcPy, ModelBuilder</li>
+              <li>LiDAR: LP360, TerraScan/Modeler, GeoCue</li>
+              <li>Photogrammetry: ERDAS, Metashape; CAD: Civil 3D, MicroStation</li>
+              <li>FME, Python, SQL/PostGIS</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Submit your resume</h3>
+            <p>Use the form below to apply directly. Attach a link to your portfolio/GitHub if you have one.</p>
+          </div>
+        </div>
+
+        <!-- Candidate application form (Netlify Forms) -->
+        <div class="card" style="margin-top:18px">
+          <h3>Candidate Application</h3>
+          <form name="candidate-application" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="candidate-application" />
+            <p style="display:none">
+              <label>Don’t fill this out: <input name="bot-field" /></label>
+            </p>
+            <div>
+              <label>Full name</label>
+              <input required name="name" placeholder="Jane Smith" />
+            </div>
+            <div>
+              <label>Email</label>
+              <input required type="email" name="email" placeholder="jane@example.com" />
+            </div>
+            <div>
+              <label>Location (city, state)</label>
+              <input name="location" placeholder="Denver, CO" />
+            </div>
+            <div>
+              <label>Years of experience</label>
+              <select name="yoe">
+                <option value="0-1">0–1</option>
+                <option value="1-3">1–3</option>
+                <option value="3-5">3–5</option>
+                <option value="5+">5+</option>
+              </select>
+            </div>
+            <div>
+              <label>Primary stack / tools</label>
+              <input name="stack" placeholder="ArcGIS Pro, ArcPy, LP360, FME, Civil3D" />
+            </div>
+            <div>
+              <label>Portfolio / GitHub / LinkedIn (URLs)</label>
+              <input name="links" placeholder="https://…" />
+            </div>
+            <div>
+              <label>Resume (URL or paste plain text)</label>
+              <textarea name="resume" placeholder="Paste text or share a public link"></textarea>
+            </div>
+            <div>
+              <button class="btn primary" type="submit">Apply now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Request Candidates</h2>
+        <p class="muted">Use this form to request a shortlist. We’ll reply within one business day.</p>
+        <!-- Netlify form -->
+        <form name="hire-request" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="hire-request" />
+          <div>
+            <label>Full name</label>
+            <input required name="name" placeholder="Jane Smith" />
+          </div>
+          <div>
+            <label>Company</label>
+            <input required name="company" placeholder="Acme Geospatial" />
+          </div>
+          <div>
+            <label>Work email</label>
+            <input required type="email" name="email" placeholder="jane@acme.com" />
+          </div>
+          <div>
+            <label>Roles / stack needed</label>
+            <textarea name="roles" placeholder="e.g., GIS Analyst (ArcGIS Pro, ArcPy), LiDAR QA/QC (LP360), FME ETL"></textarea>
+          </div>
+          <div>
+            <label>Timeline & budget (optional)</label>
+            <input name="timeline" placeholder="Start date, contract length, budget range" />
+          </div>
+          <div>
+            <button class="btn primary" type="submit">Send request</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <div>
+            <strong>Diversity, Equity & Inclusion</strong>
+            <p class="muted" style="margin:6px 0 0">We’re an equal opportunity partner. We evaluate candidates based on skills and outcomes.</p>
+          </div>
+          <a href="#contact" class="btn">Partner with us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap">
+        <div>© <span id="year"></span> Geospatial Staffing Solutions</div>
+        <div>
+          <a href="#">Terms</a> · <a href="#">Privacy</a> · <a href="mailto:lukegersh@gmail.com">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
